@@ -1,0 +1,112 @@
+body {
+  background-color: #DDD377;
+  font-weight: bold;
+}
+
+h1 {
+  text-align: center;
+}
+
+label {
+  color: white;
+}
+
+input {
+  cursor: pointer;
+
+}
+
+header {
+  max-width: 1000px;
+  margin: auto;
+  background: url(https://img.itdg.com.br/images/recipes/000/029/124/320646/320646_original.jpg);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.452);
+  border-radius: 20px;
+}
+
+.cover-opacity {
+  background-color: #59584c;
+  opacity: 0.7;
+}
+
+form {
+  flex-direction: column;
+}
+
+#cabeçalho {
+  text-align: center;
+}
+
+#encomenda {
+  font-size: 24px;
+  font-family: monospace;
+  display: flex;
+  padding-top: 2px;
+}
+
+#encomenda h1 {
+  text-align: center;
+}
+
+.decoracao {
+  border-radius: 10px;
+  width: 170px;
+  height: 25px;
+  text-align: center;
+}
+
+#bloco {
+  margin: 10px;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+#bloco input {
+  margin-top: 10px;
+}
+
+#bloco h3 {
+  padding: 5px;
+  text-align: center;
+  background-image: linear-gradient(to right, #DDD377, transparent);
+}
+
+.date-input {
+  border-radius: 50px;
+  color: black;
+  border: 1px solid black;
+  background: rgb(252, 255, 253);
+  padding: 15px 70px;
+  text-decoration: none;
+  margin-left: 1rem;
+  margin-bottom: 2rem;
+  font-size: 20px;
+}
+
+.encomendar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-encomendar {
+  border-style: none;
+  background-color: #6c63ff;
+  padding: 1.2rem 5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-encomendar:hover {
+  background-color: #4c43faf1;
+  transition: 0.8s;
+}
+
+.btn-encomendar a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff;
+}

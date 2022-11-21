@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Formulário de login</title>
+</head>
+
+<body>
+	<div class="container">
+ 		<div class="form-container">
+			<div class="form">
+				<form action="/myproject/index.php", method="POST">
+					<div class="form-header">
+						<div class="title">
+							<h1>Login</h1>
+						</div>
+					</div>
+
+					<div class="input-goup">
+						<div class="input-box">
+							<label for="login">Login</label>
+							<input id="login" type="text" name="login" placeholder="Digite seu usuário/email" required>
+						</div>
+					</div>
+					
+					<div class="input-goup">
+						<div class="input-box">
+							<label for="password">Senha</label>
+							<input id="password" type="password" name="password" placeholder="Digite sua senha" required>
+						</div>
+					</div>
+
+					<div class="continue-button">
+						<button type="submit" value="ENVIAR" ><a href="#">Continuar</a></button>
+					</div>
+					<div class="not-registered">
+						<a href="/myproject/pages/register/index.html" style="text-decoration: none;">Ainda não possui um cadastro</a>
+					</div>
+				</form>
+	
+			</div>
+		</div>
+	</div>
+</body>
+</html>

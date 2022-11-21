@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Encomendas</title>
+</head>
+<body>
+    <header>
+            <div class="cover-opacity">
+            <form name="form" method="POST" action="../../index.php">
+              <h1>Cardápio</h1>
+
+              <div id="bloco">
+                <h3>Massas</h3>
+                <input type="radio" id="formigueiroMassa" name="massas" value="formigueiro">
+                <label for="chocolateMassa">Formigueiro</label><br>
+
+                <input type="radio" id="baunilhaMassa" name="massas" value="Baunilha">
+                <label for="baunilhaMassa">Mesclado</label><br>
+
+                <input type="radio" id="redVelvetMassa" name="massas" value="RedVelvet">
+                <label for="redVelvetMassa">laranja</label><br>
+                
+                <input type="radio" id="cenouraMassa" name="massas" value="Cenoura">
+                <label for="cenouraMassa">Cenoura</label>
+              </div>
+
+              <div id="bloco">
+                <h3>Recheios</h3>
+                <input type="radio" id="chocolate" name="recheios" value="Chocolate">
+                <label for="chocolate">Chocolate amargo</label><br>
+
+                <input type="radio" id="morango" name="recheios" value="Morango">
+                <label for="morango">Morango</label><br>
+
+                <input type="radio" id="coco" name="recheios" value="Coco">
+                <label for="coco">Coco</label><br>
+
+                <input type="radio" id="ninho" name="recheios" value="Ninho">
+                <label for="ninho">Ninho com Nutella</label><br>
+
+                <input type="radio" id="nutella" name="recheios" value="Nutella">
+                <label for="nutella">Nutella</label><br>
+              </div>
+
+              <div id="bloco">
+                <h3>Coberturas</h3>
+                <input type="radio" id="prestigio" name="coberturas" value="prestigio">
+                <label for="prestigio">Prestígio</label><br>
+
+                <input type="radio" id="brigadeiro" name="coberturas" value="brigadeiro">
+                <label for="brigadeiro">Brigadeiro</label><br>
+              </div>
+
+              <div id="bloco" class="andares">
+                <h3>Andares</h3>
+                <input type="radio" id="umAndar" name="andares" value="1" checked>
+                <label for="umAndar">1 (prazo: Até 3 horas)</label><br>
+
+                <input type="radio" id="doisAndares" name="andares" value="2">
+                <label for="doisAndares">2 (prazo: Até 5 horas)</label><br>
+
+                <input type="radio" id="tresAndares" name="andares" value="3">
+                <label for="tresAndares">3 (prazo: Até 1 dia)</label><br>
+
+                <input type="radio" id="quatroAndares" name="andares" value="4">
+                <label for="quatroAndares">4 (prazo: Até 1 dia)</label><br>
+              </div>
+
+              <div id="bloco">
+                <h3>Informe a data de entrega</h3>
+                <input type="date" name="dataEntrega" class="date-input" id="dataSolicitada" onchange="checkDate()">
+              </div>
+
+              <div id="bloco">
+                <h3>Formas de entrega</h3>
+                <input type="radio" id="sim" name="entrega" value="receber" checked>
+                <label for="sim">Receber em casa</label>
+                <input type="radio" id="nao" name="entrega" value="retirar">
+                <label for="nao">Retirada</label>
+              </div>
+              <div class="encomendar">
+                <h4>
+                  <button type="submit" target="_blank"class="btn-encomendar"><a href="#">Encomendar</a></button>
+                </h4>
+              </div>
+        </div>
+      </header>
+      <script src="../scripts/menuScript.js"></script>
+</body>
+</html>

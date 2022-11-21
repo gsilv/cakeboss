@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Formulário de cadastro</title>
+</head>
+
+<body>
+	<div class="container">
+ 		<div class="form-container">
+			<div class="form">
+				<form action="/myproject/index.php", method="POST">
+					<div class="form-header">
+						<div class="title">
+							<h1>Cadastro</h1>
+						</div>
+					</div>
+
+					<div class="input-goup">
+						<div class="input-box">
+							<label for="username">Nome de usuário</label>
+							<input id="username" type="text" name="username" placeholder="Digite seu primeiro nome" required>
+						</div>
+					</div>
+
+					<div class="input-goup">
+						<div class="input-box">
+							<label for="fullname">Nome Completo</label>
+							<input id="fullname" type="text" name="fullname" placeholder="Digite seu sobrenome" required>
+						</div>
+					</div>
+
+					<div class="input-goup">
+						<div class="input-box">
+							<label for="email">E-mail</label>
+							<input id="email" type="email" name="email" placeholder="Digite seu email" required>
+						</div>
+					</div>
+
+					<div class="input-goup">
+						<div class="input-box">
+							<label for="number">Celular</label>
+							<input id="number" type="tel" name="number" placeholder="(xx) xxxxx-xxxx" required>
+						</div>
+					</div>
+
+					<div class="input-goup">
+						<div class="input-box">
+							<label for="street">Rua/Avenida</label>
+							<input id="street" type="text" name="street" placeholder="R. Anibal Mascarenhas" required>
+						</div>
+						<div class="input-box" style="margin-left: .5rem">
+							<label for="addressNum">Número</label>
+							<input id="addressNum" type="text" name="addressNum" placeholder="837A" required>
+						</div>
+					</div>
+					
+					<div class="input-goup">
+						<div class="input-box">
+							<label for="password">Senha</label>
+							<input id="password" type="password" name="password" placeholder="Digite sua senha" required>
+						</div>
+					</div>
+
+					<div class="input-goup">
+						<div class="input-box">
+							<label for="confirmpassword">Confirme sua senha</label>
+							<input id="confirmpassword" type="password" name="confirmpassword" placeholder="Digite sua senha"
+								required>
+						</div>
+					</div>
+
+					<div class="continue-button">
+						<button type="submit" value="ENVIAR" ><a href="#">Continuar</a></button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
