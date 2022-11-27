@@ -9,6 +9,10 @@
       }catch(Exception $e){
         $result = $e;
       }
+      if(!isset($_SESSION)) {
+        session_start();
+      }
+
       $username = $request['login'];
       $password = $request['password'];
       
@@ -29,10 +33,17 @@
       }else {
         $result = 'ok';
       }
-      // $_SESSION['sessionId'] = $sessionId;
-      // header('Locaion:'. 'index.php');
+      $_SESSION['username'] = $username;
       $dbConnection->close($conn);
-      // echo $result;
       return $result;
+    }
+
+    public function logOut($request) {
+      session_start();
+      if(!isset($_SESSION['username'])) {
+        return 'session doesnt exists';
+      }
+      unset($_SESSION['username']);
+      return 'ok';
     }
   }

@@ -12,3 +12,29 @@ function nextImage() {
   }
   document.getElementById("radio" + idxImageChecked).checked = true;
 }
+
+let height = 2
+let maxLength = 32
+function addHeight() {
+  let textarea = document.querySelector('.text-area')
+  let commentText = textarea.value
+  
+  if(commentText.length == maxLength) {
+    maxLength += 31
+    textarea.style.height = `${height}rem`
+    height++
+  }
+}
+
+function resetHeigth(event) {
+  if(event.key == 'Backspace') {
+    let textarea = document.querySelector('.text-area')
+    let commentText = textarea.value
+
+    if(commentText.length == 0) {
+      textarea.style.height = '1.3rem'
+      height = 2
+      maxLength = 32
+    }
+  }
+}

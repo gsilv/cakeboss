@@ -9,7 +9,10 @@
       }catch(Exception $e){
         $result = $e;
       }
-      $username = $request['username'];
+      if(!isset($_SESSION)) {
+        session_start();
+      }
+      $username = $_SESSION['username'];
       $comment = $request['comment'];
 
       $sqlGetUser = "SELECT * FROM users WHERE username = '$username'";

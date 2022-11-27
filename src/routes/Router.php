@@ -44,12 +44,31 @@ class Router extends RouteSwitch {
 
   public function signin($requestUri, $request) {
     $loginController = new LoginController();
+    if(!isset($_SESSION)) {
+      session_start();
+    }
     $route = substr($requestUri, 1);
     $result = $loginController->login($request);
     if($result == 'ok') {
-      $this->home();
+      if(isset($_SESSION['loginRequired'])) {
+        unset($_SESSION['loginRequired']);
+        return $this->menu();
+      }
+      return $this->home();
     }else {
       $this->login();
+    } 
+  }
+
+  public function logOut($requestUri, $request) {
+    $loginController = new LoginController();
+    $route = substr($requestUri, 1);
+    $result = $loginController->logOut($request);
+    echo $result;
+    if($result == 'ok') {
+      header('Location:'. '/myproject/index.php');
+    }else {
+      header('Location:'. '/myproject/index.php');
     } 
   }  
 
@@ -84,6 +103,17 @@ class Router extends RouteSwitch {
     $result = $OrderController->add($request);
     if($result) {
       $this->home();
+    }else {
+      $this->home();
+    } 
+  }
+
+  public function listOrder($requestUri, $request) {
+    $orderController = new OrderController();
+    $route = substr($requestUri, 1);
+    $result = $orderController->list($request);
+    if($result) {
+      $this->orders();
     }else {
       $this->home();
     } 

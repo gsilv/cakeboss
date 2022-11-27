@@ -1,5 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #DDD377;
+  background-color: #dab7b5;
   font-weight: bold;
 }
 
@@ -16,9 +22,72 @@ input {
 
 }
 
+a {
+  color: #333;
+  text-decoration: none;
+}
+
 header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #F7EF8A;
+  height: 4.6875rem;
+  padding: 1rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.menu a {
+  display: block;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  transition: .45s;
+}
+
+.menu a:hover {
+  background-color: darksalmon;
+}
+
+@media (max-width: 600px) {
+  .menu {
+    display: block;
+    position: absolute;
+    top: 4.6875rem;
+    left: 0;
+    background-color: #dab7b5;;
+    text-align: center;
+    width: 100%;
+    height: 0;
+    z-index: 1;
+    visibility: hidden;
+    overflow-y: hidden;
+    transition: 0.5s;
+  }
+
+  .menu a {
+    padding: 1rem 0;
+    margin-inline: 1rem;
+    border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.16);
+    border-radius: 0;
+  }
+}
+
+.form-wrapper {
   max-width: 1000px;
   margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   background: url(https://img.itdg.com.br/images/recipes/000/029/124/320646/320646_original.jpg);
   background-size: cover;
   background-position: center;
@@ -98,6 +167,7 @@ form {
   padding: 1.2rem 5rem;
   border-radius: 5px;
   cursor: pointer;
+  margin-bottom: 1rem;
 }
 
 .btn-encomendar:hover {

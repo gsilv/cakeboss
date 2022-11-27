@@ -8,20 +8,36 @@
   <title>Bolos de Casamento</title>
   <link rel="stylesheet" href="pages/home/styles.css">
   <script src="pages/scripts/homeScript.js"></script>
-
-
 <body>
+  <?php 
+    if(!isset($_SESSION)) {
+      session_start();  
+      echo "<script>console.log('[SESSION CREATED]')</script>";
+    }else {
+      echo "<script>console.log('[SESSION ALREADY EXISTS]')</script>";
+    }
+  ?>
   <header>
     <a class="logo" href="/">Cake boss</a>
     <nav class="nav">
       <input type="checkbox" id="checkbox" class="checkbox">
       <label for="checkbox" class="label-menu">Menu<span class="hamburger"></span></label>
       <ul class="menu">
-        <li><a href="#home">Home</a></li>
+        <li><a href="/index.php">Home</a></li>
         <li><a href="#servicos">Serviços</a></li>
         <li><a href="">Quem Somos</a></li>
         <li><a href="#contatos"> Contatos</a></li>
-        <li><a href="pages/login/index.html  ">Entrar</a></li>
+        <?php 
+          require_once __DIR__ . '/../../src/controllers/LoginController.php';
+          $loginController = new LoginController();
+
+          if(!isset($_SESSION['username'])) {
+            echo "<li><a href='pages/login/index.html'>Entrar</a></li>";
+          }else {
+            echo "<li><a href='index.php?orders'>Pedidos</a></li>";
+            echo "<li><a onclick='location.reload()' href='index.php?logout'>Sair</a></li>";
+          }
+        ?>
       </ul>
     </nav>
   </header>
@@ -102,59 +118,107 @@
 
   <div id="servicos">`
     <div id="fundo-card">
-      <div class="quadrado"><img
-          src="https://www.aceitosim.com.br/wp-content/uploads/2022/02/Bolo-de-casamento-estilo-Ruffle-Cake-682x1024.jpeg"
-          alt="">bolo de Casamento,e varias outras coisas
-        para 800 mil pessoas.<div>
-        </div>
-        <a href="pages/menu/index.html">
-          <button>
-            <img src="public/3916598.png" title="Bolo de Casamento" alt="">
-            Ver Detalhes
-          </button>
-        </a>
+      <div class="quadrado">
+        <img src="https://www.aceitosim.com.br/wp-content/uploads/2022/02/Bolo-de-casamento-estilo-Ruffle-Cake-682x1024.jpeg"
+          alt="">
+        <p class="cake-classification">bolo de Casamento</p>
+        <?php 
+          if(!isset($_SESSION['username'])){
+            echo '<a href="index.php?loginRequired">
+              <button>
+                <img src="public/3916598.png" title="Bolo de Casamento" alt="">
+                Fazer pedido
+              </img>
+              </button>
+            </a>';
+          }else {
+            echo '<a href="pages/menu/index.html">
+              <button>
+                <img src="public/3916598.png" title="Bolo de Casamento" alt="">
+                Fazer pedido
+              </img>
+              </button>
+            </a>';
+          }
+        ?>
       </div>
     </div>
     <div id="fundo-card">
-      <div class="quadrado"><img
-          src="https://www.aceitosim.com.br/wp-content/uploads/2022/02/Bolo-de-casamento-estilo-Ruffle-Cake-682x1024.jpeg"
-          alt="">bolo de Casamento,e varias outras coisas
-        para 800 mil pessoas.<div>
-        </div>
-          <a href="pages/menu/index.html">
-            <button>
-              <img src="public/3916598.png" title="Bolo de Casamento" alt="">
-                Ver Detalhes
-            </button>
-          </a>
+      <div class="quadrado">
+        <img src="https://www.aceitosim.com.br/wp-content/uploads/2022/02/Bolo-de-casamento-estilo-Ruffle-Cake-682x1024.jpeg"
+          alt="">
+          <p class="cake-classification">bolo de aniverário</p>
+          <?php 
+          if(!isset($_SESSION['username'])){
+            echo '<a href="index.php?loginRequired">
+              <button>
+                <img src="public/3916598.png" title="Bolo de Casamento" alt="">
+                Fazer pedido
+              </img>
+              </button>
+            </a>';
+          }else {
+            echo '<a href="pages/menu/index.html">
+              <button>
+                <img src="public/3916598.png" title="Bolo de Casamento" alt="">
+                Fazer pedido
+              </img>
+              </button>
+            </a>';
+          }
+        ?>
       </div>
     </div>
     <div id="fundo-card">
-      <div class="quadrado"><img
-          src="https://www.aceitosim.com.br/wp-content/uploads/2022/02/Bolo-de-casamento-estilo-Ruffle-Cake-682x1024.jpeg"
-          alt="">bolo de Casamento,e varias outras coisas
-        para 800 mil pessoas.<div>
-        </div>
-        <a href="pages/menu/index.html">
-          <button>
-            <img src="public/3916598.png" title="Bolo de Casamento" alt="">
-              Ver Detalhes
-          </button>
-        </a>
+      <div class="quadrado">
+        <img src="https://www.aceitosim.com.br/wp-content/uploads/2022/02/Bolo-de-casamento-estilo-Ruffle-Cake-682x1024.jpeg"
+          alt="">
+          <p class="cake-classification">bolo de chá</p>
+          <?php 
+          if(!isset($_SESSION['username'])){
+            echo '<a href="index.php?loginRequired">
+              <button>
+                <img src="public/3916598.png" title="Bolo de Casamento" alt="">
+                Fazer pedido
+              </img>
+              </button>
+            </a>';
+          }else {
+            echo '<a href="pages/menu/index.html">
+              <button>
+                <img src="public/3916598.png" title="Bolo de Casamento" alt="">
+                Fazer pedido
+              </img>
+              </button>
+            </a>';
+          }
+        ?>
       </div>
     </div>
     <div id="fundo-card">
-      <div class="quadrado"><img
-          src="https://www.aceitosim.com.br/wp-content/uploads/2022/02/Bolo-de-casamento-estilo-Ruffle-Cake-682x1024.jpeg"
-          alt="">bolo de Casamento,e varias outras coisas
-        para 800 mil pessoas.<div>
-        </div>
-        <a href="pages/menu/index.html">
-          <button>
-            <img src="public/3916598.png" title="Bolo de Casamento" alt="">
-              Ver Detalhes
-          </button>
-        </a>
+      <div class="quadrado">
+        <img src="https://www.aceitosim.com.br/wp-content/uploads/2022/02/Bolo-de-casamento-estilo-Ruffle-Cake-682x1024.jpeg"
+          alt="">
+          <p class="cake-classification">Diversos</p>
+          <?php 
+          if(!isset($_SESSION['username'])){
+            echo '<a href="index.php?loginRequired">
+              <button>
+                <img src="public/3916598.png" title="Bolo de Casamento" alt="">
+                Fazer pedido
+              </img>
+              </button>
+            </a>';
+          }else {
+            echo '<a href="pages/menu/index.html">
+              <button>
+                <img src="public/3916598.png" title="Bolo de Casamento" alt="">
+                Fazer pedido
+              </img>
+              </button>
+            </a>';
+          }
+        ?>
       </div>
     </div>
   </div>
@@ -179,17 +243,28 @@
       }
     ?>
   </div>
-  <div class="comentarios">
-    <div class="formulario">
-      <h2>Ajude-nos com seu feeback</h2>
-      <form action="index.php" method="POST">
-        <input name="username" type="text" placeholder="Seu Nome"><br>
-        <!-- <input name="username" type="text" placeholder="Seu Nome"><br> -->
-        <textarea style="background-color: #f7f0ee;" name="comment" cols="30" rows="10" placeholder="Digite aqui"></textarea><br>
-        <input type="submit" value="ENVIAR" id="form-botao"><a href="#"></a></input>
-      </form>
-    </div>
-  </div>
+  
+  <?php 
+    if(isset($_SESSION['username'])) {
+      echo '<div class="comentarios">
+        <div class="formulario">
+          <h2>Ajude-nos com seu feeback</h2>
+          <form action="index.php" method="POST">
+            <textarea name="comment" onkeyup="resetHeigth(window.event)" onkeypress="addHeight()" class="text-area" placeholder="Digite aqui"></textarea>
+            <label for="comment"></label>
+            <input type="submit" value="ENVIAR" id="form-botao"><a href="#"></a></input>
+          </form>
+        </div>
+      </div>';
+    }else {
+      echo '<div class="add-comentario-wrapper">
+        <div class="add-comentario">
+          <a href="pages/login/index.html">Ajude-nos com seu feedback...</a>
+        </div>
+        <div class="linha-comentario"></div>
+      </div>';
+    }
+  ?>
 
   <footer>
     <img src="public/teamImages/Gabriel.png" alt="">

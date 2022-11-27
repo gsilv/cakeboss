@@ -10,6 +10,10 @@ class RegisterController {
       echo $e;
     }
 
+    if(!isset($_SESSION)) {
+      session_start();
+    }
+
     $formKeys   = array_keys($request);
     $username   = $request["username"];
     $fullname   = $request["fullname"];
@@ -43,6 +47,7 @@ class RegisterController {
       VALUES ('$username', '$fullname', '$email', '$password', '$address', '$contact')";
 
     if($conn->query($sql) === TRUE) {
+      $_SESSION['username'] = $username;
       $result = "New record created successfully";
     }else {
       $result = "Error: " . $sql . "<br>" . $conn->error;

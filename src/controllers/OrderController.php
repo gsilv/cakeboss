@@ -37,23 +37,23 @@
         $result = $e;
       }
 
-      $sql = "SELECT u.username, c.message, DATE_FORMAT(c.created_at, '%d-%c-%Y') AS created_at FROM comments AS c INNER JOIN users AS u ON c.fk_user_id = u.id";
+      $sql = "SELECT u.username, o.massa, o.filling, o.size, o.delivery_type, DATE_FORMAT(o.event_date, '%d-%c-%Y') AS created_at FROM orders AS o INNER JOIN users AS u ON o.fk_user_id = u.id";
       $dbResult = $conn->query($sql);
-      $commentsResult = $dbResult->fetch_assoc();
-      if(!$commentsResult) {
+      $ordersResult = $dbResult->fetch_assoc();
+      if(!$ordersResult) {
         $dbConnection->close($conn);
         return null;
       }
-      $commentsLength = count($commentsResult);
-      $comments = array();
+      $ordersLength = count($ordersResult);
+      $orders = array();
 
-      if($commentsLength > 0){
+      if($ordersLength > 0){
         do{
-          array_push($comments, $commentsResult['username'], $commentsResult['message'], $commentsResult['created_at']);
-        }while($commentsResult = $dbResult->fetch_assoc());
+          array_push($orders, $ordersResult['username'], $ordersResult['massa'], $ordersResult['filling'], $ordersResult['size'], $ordersResult['delivery_type'], $ordersResult['created_at']);
+        }while($ordersResult = $dbResult->fetch_assoc());
       }
 
       $dbConnection->close($conn);
-      return $comments;
+      return $orders;
     }
   }
