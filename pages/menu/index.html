@@ -21,86 +21,103 @@
       </ul>
     </nav>
   </header>
-  <div class="form-wrapper">
-    <div class="cover-opacity">
-      <form name="form" method="POST" action="../../index.php">
-        <h1>Cardápio</h1>
+  <div class="container">
+    <div class="form-wrapper">
+      <div class="cover-opacity">
+        <form  onchange="valuesCalc(window.event)" name="form" method="POST" action="../../index.php">
+          <h1>Cardápio</h1>
 
-        <div id="bloco">
-          <h3>Massas</h3>
-          <input type="radio" id="formigueiroMassa" name="massas" value="formigueiro">
-          <label for="chocolateMassa">Formigueiro</label><br>
+          <div id="bloco">
+            <h3>Massas</h3>
+            <input type="radio" id="formigueiroMassa" name="massas" value="formigueiro">
+            <label for="chocolateMassa">Formigueiro - R$40</label><br>
 
-          <input type="radio" id="baunilhaMassa" name="massas" value="Baunilha">
-          <label for="baunilhaMassa">Mesclado</label><br>
+            <input type="radio" id="mescladoMassa" name="massas" value="mesclado">
+            <label for="mescladoMassa">Mesclado - R$30</label><br>
 
-          <input type="radio" id="redVelvetMassa" name="massas" value="RedVelvet">
-          <label for="redVelvetMassa">laranja</label><br>
+            <input type="radio" id="laranjaMassa" name="massas" value="laranja">
+            <label for="laranjaMassa">laranja - R$20</label><br>
 
-          <input type="radio" id="cenouraMassa" name="massas" value="Cenoura">
-          <label for="cenouraMassa">Cenoura</label>
-        </div>
+            <input type="radio" id="cenouraMassa" name="massas" value="cenoura">
+            <label for="cenouraMassa">Cenoura - R$30</label>
+          </div>
 
-        <div id="bloco">
-          <h3>Recheios</h3>
-          <input type="radio" id="chocolate" name="recheios" value="Chocolate">
-          <label for="chocolate">Chocolate amargo</label><br>
+          <div id="bloco">
+            <h3>Recheios</h3>
+            <input type="radio" id="chocolate" name="recheios" value="chocolate">
+            <label for="chocolate">Chocolate amargo - R$5</label><br>
 
-          <input type="radio" id="morango" name="recheios" value="Morango">
-          <label for="morango">Morango</label><br>
+            <input type="radio" id="morango" name="recheios" value="morango">
+            <label for="morango">Morango - R$7</label><br>
 
-          <input type="radio" id="coco" name="recheios" value="Coco">
-          <label for="coco">Coco</label><br>
+            <input type="radio" id="coco" name="recheios" value="coco">
+            <label for="coco">Coco - R$5</label><br>
 
-          <input type="radio" id="ninho" name="recheios" value="Ninho">
-          <label for="ninho">Ninho com Nutella</label><br>
+            <input type="radio" id="ninho" name="recheios" value="ninho">
+            <label for="ninho">Ninho com Nutella - R$15</label><br>
 
-          <input type="radio" id="nutella" name="recheios" value="Nutella">
-          <label for="nutella">Nutella</label><br>
-        </div>
+            <input type="radio" id="nutella" name="recheios" value="nutella">
+            <label for="nutella">Nutella - R$10</label><br>
+          </div>
 
-        <div id="bloco">
-          <h3>Coberturas</h3>
-          <input type="radio" id="prestigio" name="coberturas" value="prestigio">
-          <label for="prestigio">Prestígio</label><br>
+          <div id="bloco">
+            <h3>Coberturas</h3>
+            <input type="radio" id="prestigio" name="coberturas" value="prestigio">
+            <label for="prestigio">Prestígio - R$7</label><br>
 
-          <input type="radio" id="brigadeiro" name="coberturas" value="brigadeiro">
-          <label for="brigadeiro">Brigadeiro</label><br>
-        </div>
+            <input type="radio" id="brigadeiro" name="coberturas" value="brigadeiro">
+            <label for="brigadeiro">Brigadeiro - R$5</label><br>
+          </div>
 
-        <div id="bloco" class="andares">
-          <h3>Andares</h3>
-          <input type="radio" id="umAndar" name="andares" value="1" checked>
-          <label for="umAndar">1 (prazo: Até 3 horas)</label><br>
+          <div id="bloco" class="andares">
+            <h3>Andares</h3>
+            <input type="radio" id="umAndar" name="andares" value="1" checked>
+            <label for="umAndar">1 (prazo: Até 3 horas)</label><br>
 
-          <input type="radio" id="doisAndares" name="andares" value="2">
-          <label for="doisAndares">2 (prazo: Até 5 horas)</label><br>
+            <input type="radio" id="doisAndares" name="andares" value="2">
+            <label for="doisAndares">2 (prazo: Até 5 horas)</label><br>
 
-          <input type="radio" id="tresAndares" name="andares" value="3">
-          <label for="tresAndares">3 (prazo: Até 1 dia)</label><br>
+            <input type="radio" id="tresAndares" name="andares" value="3">
+            <label for="tresAndares">3 (prazo: Até 1 dia)</label><br>
 
-          <input type="radio" id="quatroAndares" name="andares" value="4">
-          <label for="quatroAndares">4 (prazo: Até 1 dia)</label><br>
-        </div>
+            <input type="radio" id="quatroAndares" name="andares" value="4">
+            <label for="quatroAndares">4 (prazo: Até 1 dia)</label><br>
+          </div>
 
-        <div id="bloco">
-          <h3>Informe a data de entrega</h3>
-          <input type="date" name="dataEntrega" class="date-input" id="dataSolicitada" onchange="checkDate()">
-        </div>
+          <div id="bloco">
+            <h3>Informe a data de entrega</h3>
+            <input type="date" name="dataEntrega" class="date-input" id="dataSolicitada" onchange="checkDate()">
+          </div>
 
-        <div id="bloco">
-          <h3>Formas de entrega</h3>
-          <input type="radio" id="sim" name="entrega" value="receber" checked>
-          <label for="sim">Receber em casa</label>
-          <input type="radio" id="nao" name="entrega" value="retirar">
-          <label for="nao">Retirada</label>
-        </div>
-        <div class="encomendar">
-          <h4>
-            <button type="submit" target="_blank" class="btn-encomendar"><a href="#">Encomendar</a></button>
-          </h4>
-        </div>
+          <div id="bloco">
+            <h3>Formas de entrega</h3>
+            <input type="radio" id="sim" name="entrega" value="receber" checked>
+            <label for="sim">Receber em casa</label>
+            <input type="radio" id="nao" name="entrega" value="retirar">
+            <label for="nao">Retirada</label>
+          </div>
+
+          <div class='comment-card'>
+            <h2>
+              Valores
+            </h2>
+            <input class="massaInput" name="value" placeholder="massa" disabled></input>
+            <label for="value" style="color:black"></label>
+            <input class="fillingInput" name="value" placeholder="recheio" disabled></input>
+            <label for="value" style="color:black"></label>
+            <input class="coverageInput" name="value" placeholder="cobertura" disabled></input>
+            <label for="value" style="color:black"></label>
+            <input class="totalInput" name="value" placeholder="TOTAL" style="margin-top:3rem" disabled></input>
+            <label for="value" style="color:black"></label>
+          </div>
+          <div class="encomendar">
+            <h4>
+              <button type="submit" target="_blank" class="btn-encomendar"><a href="#">Encomendar</a></button>
+            </h4>
+          </div>
+      </div>
     </div>
+
   </div>
   <script src="../scripts/menuScript.js"></script>
 </body>

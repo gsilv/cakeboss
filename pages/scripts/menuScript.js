@@ -50,3 +50,65 @@ function checkDate() {
     }
   }
 }
+
+function valuesCalc(event) {
+  let massaInput = document.getElementsByClassName('massaInput')
+  let fillingInput = document.getElementsByClassName('fillingInput')
+  let coverageInput = document.getElementsByClassName('coverageInput')
+  let totalInput = document.getElementsByClassName('totalInput')
+  
+  switch(event.target.value) {
+    case 'formigueiro': {
+      massaInput.value.placeholder = 'massa - R$40'
+      break;
+    }
+    case 'mesclado':
+    case 'cenoura': {
+      massaInput.value.placeholder = 'massa - R$30'
+      break;
+    }
+    case 'laranja': {
+      massaInput.value.placeholder = 'massa - R$20'
+      break;
+    }
+    case 'chocolate': 
+    case 'coco':{
+      fillingInput.value.placeholder = 'recheio - R$5'
+      break;
+    }
+    case 'morango': {
+      fillingInput.value.placeholder = 'recheio - R$7'
+      break;
+    }
+    case 'ninho': {
+      fillingInput.value.placeholder = 'recheio - R$15'
+      break;
+    }
+    case 'nutella': {
+      fillingInput.value.placeholder = 'recheio - R$10'
+      break;
+    }
+    case 'prestigio': {
+      coverageInput.value.placeholder = 'cobertura - R$7'
+      break;
+    }
+    case 'brigadeiro': {
+      coverageInput.value.placeholder = 'cobertura - R$5'
+      break;
+    }
+    default: break;
+  }
+  let total = `${massaInput.value.placeholder} ${fillingInput.value.placeholder} ${coverageInput.value.placeholder}`
+  total = total.replace(/[^0-9|-]/g, '').split('-')
+  let result = 0
+
+  for (let i = 0; i < total.length; i++) {
+    if(!total[i]) continue
+    let value = +total[i]
+
+    if(value) {
+      result += value
+    }
+  }
+  totalInput.value.placeholder = `TOTAL - ${result}` 
+}
